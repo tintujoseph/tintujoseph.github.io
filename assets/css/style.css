@@ -10336,7 +10336,10 @@ Copyright (c) 2015 Daniel Eden
   white-space: nowrap;
   left: 0;
   top: 0;
-  color: #750e70;
+    background: #C017B8;
+    background: radial-gradient(circle farthest-side at right center, #C017B8 0%, #750E70 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .cd-words-wrapper b.is-visible {
@@ -12197,7 +12200,6 @@ figcaption {
   text-transform: uppercase;
   border-radius: 6px;
   transition: var(--transition);
-  background: var(--background-color-1);
   box-shadow: var(--shadow-1);
   position: relative;
 }
@@ -12210,7 +12212,6 @@ figcaption {
   border-radius: 6px;
   top: 0;
   left: 0;
-  background: linear-gradient(to right bottom, #212428, #16181c);
   opacity: 0;
   z-index: -1;
 }
@@ -13480,7 +13481,7 @@ figcaption {
   border-radius: 10px;
   top: 0;
   left: 0;
-  background: linear-gradient(to right bottom, #212428, #16181c);
+  background: linear-gradient(to right bottom, #0a0a0a, #3d2146c7);
   opacity: 0;
   z-index: -1;
 }
@@ -13853,8 +13854,7 @@ div#featured-project-carousel {
   border: 0 none;
   border-radius: 10px;
   background: var(--background-color-1);
-  box-shadow: var(--shadow-1);
-  justify-content: space-between;
+  justify-content: center;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .rn-nav-list {
@@ -17088,7 +17088,7 @@ div#featured-project-carousel {
   width: 100%;
   transition: var(--transition);
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .rn-portfolio .inner .thumbnail a img,
@@ -20373,4 +20373,43 @@ form {
   padding: 80px 20px;
   background-color: #161414;
   border-color: #000;
+}
+
+.border-left-thick { border-left: 4px solid #c0c0c033; padding-left: 16px; }
+.border-thick-gradient {
+    background: radial-gradient(circle at 100% 100%, #000000 0, #000000 2px, transparent 2px) 0% 0%/6px 6px no-repeat,
+        radial-gradient(circle at 0 100%, #000000 0, #000000 2px, transparent 2px) 100% 0%/6px 6px no-repeat,
+        radial-gradient(circle at 100% 0, #000000 0, #000000 2px, transparent 2px) 0% 100%/6px 6px no-repeat,
+        radial-gradient(circle at 0 0, #000000 0, #000000 2px, transparent 2px) 100% 100%/6px 6px no-repeat,
+        linear-gradient(#000000, #000000) 50% 50%/calc(100% - 8px) calc(100% - 12px) no-repeat,
+        linear-gradient(#000000, #000000) 50% 50%/calc(100% - 12px) calc(100% - 8px) no-repeat,
+        linear-gradient(90deg, rgba(208,208,208,0.72) 0%, rgba(201, 201, 201, 0.473) 29%, transparent 100%);
+    border-radius: 6px;
+    padding: 20px;
+    box-sizing: content-box;
+}
+  
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff;
+        transform: translateX(0);
+    }
+    100% {
+        text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff;
+        transform: translateX(20px);
+    }
+}
+
+.rn-portfolio::before, .resume-single-list::before, .theme-background::before {
+    background: linear-gradient(to right bottom, #0a0a0a, #3d2146c7) !important;
+}
+
+.social-area .fb-bg, .fb-bg { 
+    background: linear-gradient(128deg, #28395c, #13223a);
+}
+.social-area .li-bg, .li-bg { 
+    background: linear-gradient(135deg, #225685, #0a232e);
+}
+.social-area .in-bg, .in-bg { 
+    background: linear-gradient(135deg, #8f684ed9, #874e30, #873736, #832b4f, #763b68);
 }
